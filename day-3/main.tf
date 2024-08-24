@@ -29,7 +29,7 @@ resource "aws_subnet" "public_subnet2" {
   vpc_id            = aws_vpc.customvpc.id
   cidr_block        = "10.0.1.0/24"
   availability_zone = var.availability_zone
-  
+
   tags = {
     name = "public _subnet1"
   }
@@ -89,7 +89,7 @@ resource "aws_instance" "ec2" {
   key_name               = var.key_name
   subnet_id              = aws_subnet.public_subnet.id
   vpc_security_group_ids = [aws_security_group.sg1.id]
-
+  associate_public_ip_address = true
   tags = {
     name = "public_ec2"
   }
