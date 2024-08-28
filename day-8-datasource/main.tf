@@ -8,6 +8,7 @@ resource "aws_instance" "ec2" {
   }
 }
 
+
 data "aws_subnet" "selected" {
     id = "subnet-04af06a68615d0390"
 }
